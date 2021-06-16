@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route, Link} from 'react-router-dom'
+import taquilla from './taquilla';
+import Peliculas from './Peliculas'
+import Movie from './Movie'
 
-function App() {
+
+
+function Cabecera() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <header>
+      <h1>Rutas en React</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/pelicula">Peliculas</Link>   
+          </li>         
+        </ul>
+      </nav>
+    </header>
   );
 }
 
+function App() {
+
+
+  return (
+      <BrowserRouter>
+      <Route exact path="/pelicula/:titulo">
+        <Movie taquilla={taquilla}/>
+      </Route>
+          <Cabecera />
+              <Route path="/pelicula">
+              <Peliculas taquilla={taquilla}/>
+              </Route>
+         </BrowserRouter>
+  );
+}
+
+
 export default App;
+
+
