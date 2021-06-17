@@ -1,7 +1,5 @@
 
-const taquilla = {
-     
-    peliculas: [
+const taquilla = [
         {
           titulo: "El secreto de los mccann",
           imagen: "https://upload.wikimedia.org/wikipedia/en/6/6a/SecondhandLions.jpg",
@@ -27,7 +25,7 @@ const taquilla = {
 
         },
         
-      ],
-  };
+      ]
+  
   
   export default taquilla
